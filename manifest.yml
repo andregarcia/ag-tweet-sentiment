@@ -1,0 +1,4 @@
+---
+applications:
+- name: ag-tweet-sentiment
+  memory: 128M
