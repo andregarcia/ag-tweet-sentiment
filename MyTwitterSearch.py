@@ -3,7 +3,7 @@
 from twitter import *
 
 
-class TwitterSearch():
+class MyTwitterSearch():
 
 	def __init__(self):
 		config = {}
@@ -13,7 +13,7 @@ class TwitterSearch():
 		        auth = OAuth(config["access_key"], config["access_secret"], config["consumer_key"], config["consumer_secret"]))
 
 
-	def search(self, q, count=50):
+	def search(self, q, count):
 		search_results = []
 		query = self.twitter.search.tweets(q = q, count = count)
 	
@@ -25,9 +25,9 @@ class TwitterSearch():
 
 
 
-
+## testing module
 if __name__=='__main__':
-	ts = TwitterSearch()
+	ts = MyTwitterSearch()
 	cont = 1
 	for x in ts.search('dilma', 10):
 		print str(cont) + ')', x['text'], '\n'

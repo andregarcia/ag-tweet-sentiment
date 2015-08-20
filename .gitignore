@@ -59,3 +59,7 @@ target/
 
 #file with tokens
 config.py
+api_key.txt
+
+#temporary files
+.*.swp

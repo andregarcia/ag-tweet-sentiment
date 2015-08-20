@@ -1,6 +1,8 @@
 """Cloud Foundry test"""
 from flask import Flask,send_from_directory
 import os
+import MyTwitterSearch
+
 
 app = Flask(__name__)
 
@@ -10,8 +12,12 @@ port = int(os.getenv('VCAP_APP_PORT', 8080))
 
 @app.route('/')
 def hello_world():
-	return 'Hello World Again! I am running on port ' + str(port)
-
+	s = 'Hello World Again! I am running on port ' + str(port)
+	ts = MyTwitterSearch.TwitterSearch()
+	res = ts.search('dilma', 10)
+	for r in res:
+		s += '<br/><br/>' + r['text']
+	return s
 
 
 #serve html
