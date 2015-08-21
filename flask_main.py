@@ -14,12 +14,8 @@ port = int(os.getenv('VCAP_APP_PORT', 8080))
 
 @app.route('/')
 def hello_world():
-	s = 'Hello World Again! I am running on port ' + str(port)
-	ts = MyTwitterSearch.MyTwitterSearch()
-	res = ts.search('dilma', 10)
-	for r in res:
-		s += '<br/><br/>' + r['text']
-	return s
+	return send_from_directory('html', 'home.html')
+
 
 
 @app.route('/search/term')
