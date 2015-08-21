@@ -1,7 +1,9 @@
 """Cloud Foundry test"""
-from flask import Flask,send_from_directory
+from flask import Flask,send_from_directory,request
 import os
 import MyTwitterSearch
+import json
+import MyTwitterSentimentAnalyzer
 
 
 app = Flask(__name__)
@@ -13,11 +15,20 @@ port = int(os.getenv('VCAP_APP_PORT', 8080))
 @app.route('/')
 def hello_world():
 	s = 'Hello World Again! I am running on port ' + str(port)
-	ts = MyTwitterSearch.TwitterSearch()
+	ts = MyTwitterSearch.MyTwitterSearch()
 	res = ts.search('dilma', 10)
 	for r in res:
 		s += '<br/><br/>' + r['text']
 	return s
+
+
+@app.route('/search/term')
+def search_term_and_analyze():
+	term = request.args.get('q', '')
+	if term:
+		tsa = MyTwitterSentimentAnalyzer.MyTwitterSentimentAnalyzer()
+		res = tsa.search_term_and_analyze(term, 3)
+		return json.dumps(res)
 
 
 #serve html
@@ -39,7 +50,7 @@ def send_css(path):
 
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=port)
+	app.run(host='0.0.0.0', port=port, debug=True)
 
 
 

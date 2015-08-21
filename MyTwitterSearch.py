@@ -15,7 +15,7 @@ class MyTwitterSearch():
 
 	def search(self, q, count):
 		search_results = []
-		query = self.twitter.search.tweets(q = q, count = count)
+		query = self.twitter.search.tweets(q = q, count = count, lang = 'pt', result_type = 'popular')
 	
 		for result in query["statuses"]:
 			search_results.append(result)
@@ -29,6 +29,6 @@ class MyTwitterSearch():
 if __name__=='__main__':
 	ts = MyTwitterSearch()
 	cont = 1
-	for x in ts.search('dilma', 10):
+	for x in ts.search('obama', 10):
 		print str(cont) + ')', x['text'], '\n'
 		cont += 1

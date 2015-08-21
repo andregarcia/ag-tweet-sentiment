@@ -22,7 +22,7 @@ class MyTwitterSentimentAnalyzer():
 #testing module
 if __name__=='__main__':
 	tsa = MyTwitterSentimentAnalyzer()
-	pprint.pprint(tsa.search_term_and_analyze('obama', 2))
+	pprint.pprint(tsa.search_term_and_analyze('obama', 5))
 
 
 
