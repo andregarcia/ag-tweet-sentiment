@@ -23,7 +23,7 @@ def search_term_and_analyze():
 	term = request.args.get('q', '')
 	if term:
 		tsa = MyTwitterSentimentAnalyzer.MyTwitterSentimentAnalyzer()
-		res = tsa.search_term_and_analyze(term, 3)
+		res = tsa.search_term_and_analyze(term, 10)	#hardcode 10
 		return json.dumps(res)
 
 
