@@ -30,10 +30,17 @@ class MyAlchemyApi():
 
 		return ret
 
+
+	def _filter_unsupported_text_language(self, results):
+		#filter language detection errors
+		results = [x for x in results if x['error'] != 'unsupported-text-language']
+		return results
+
 	def analyze_multiple_tweet(self, tweets):
 		ret = []
 		for t in tweets:
 			ret.append(self.analyze_single_tweet(t))
+		ret = self._filter_unsupported_text_language(ret)
 		return ret
 
 
@@ -52,6 +59,13 @@ if __name__=='__main__':
 	pprint.pprint(len(ret))
 	pprint.pprint(ret)
 	
-
+	#testing wrong language fitler
+	print '\n\nAnalyzing multiple tweet with language errors'
+	ret2 = ap._filter_unsupported_text_language([
+					{'text' : 'texto teste', 'error' : None},
+					{'text' : 'aaa', 'error' : 'unsupported-text-language'}
+				])
+	pprint.pprint(len(ret2))
+	pprint.pprint(ret2)
 
 
