@@ -8,13 +8,6 @@
 
     
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-
-
-
-
-
-
-
   
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="../css/layouts/side-menu-old-ie.css">
@@ -22,12 +15,6 @@
     <!--[if gt IE 8]><!-->
         <link rel="stylesheet" href="../css/layouts/side-menu.css">
     <!--<![endif]-->
-  
-
-
-    
-
-    
 
 </head>
 <body>
@@ -51,7 +38,7 @@
             <ul class="pure-menu-list">
                 <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
                 <li class="pure-menu-item"><a href="/html/searchbyterm.html" class="pure-menu-link">Search By Term</a></li>
-
+		<li class="pure-menu-item"><a href="/html/about.html" class="pure-menu-link">About</a></li>
             </ul>
         </div>
     </div>
@@ -63,18 +50,32 @@
         </div>
 
         <div class="content">
-            <h2 class="content-subhead">What is Tweet Sentiment?</h2>
-            <p>
-                Tweet Sentiment is a web application that performs Sentiment Analysis on Twitter data making use of the IBM's AlchemyAPI. Currently there is only one search mode: by term. The user (you!) provides the search term. The application will search for popular twitter posts (using the Twitter API) containing the given term and will then perform the sentiment analysis on the results. Use the sidebar or click the button bellow to go to the 'search by term' page!
-            </p>
 
+            <h2 class="content-subhead">Author</h2>
+            <p>
+                The author of this project is Andre Garcia.
+	    </p>
+
+            <h2 class="content-subhead">Source code</h2>
+            <p>
+                The source code of this project can be found on github: <a href="https://github.com/andregarcia/ag-tweet-sentiment">https://github.com/andregarcia/ag-tweet-sentiment</a>
+	    </p>
+	    
+            <h2 class="content-subhead">Used Technologies and Resources</h2>
+            <p>
+                Here is the list of technologies and resources that were used in this project:
+		<ul>
+			<li><a href="http://flask.pocoo.org/">Python's Flask web framework</a>: used to develop the backend of the web application.</li>
+			<li><a href="http://www.alchemyapi.com/">IBM's AlchemyAPI</a>: used to perform sentiment analysis on text.</li>
+			<li><a href="http://www.ibm.com/cloud-computing/bluemix/">IBM's Bluemix</a>: cloud solution used to deploy and host this web application.</li>
+			<li><a href="https://dev.twitter.com/rest/public">Twitter API</a>: used to retrieve twitter posts.</li>
+			<li><a href="https://pypi.python.org/pypi/twitter">Python's twitter lib</a>: used to access the twitter api through python code.</li>
+			<li><a href="http://purecss.io/layouts/">Yahoo Pure CSS template</a>: used as layout for the web pages. The used template can be found <a href="http://purecss.io/layouts/">here</a>.</li>
+		</ul>
+	    </p>
 	    <br/>
 
-	    <div class="pure-g">
-	    	<div class="pure-u-1-3"></div> 
-	    	<div class="pure-u-1-3"><a href="/html/searchbyterm.html" class="pure-button" style="background: rgb(66, 184, 221)">Go to Search By Term!</a></div>
-	    	<div class="pure-u-1-3"></div>
-	    </div>
+
 
         </div>
     </div>
