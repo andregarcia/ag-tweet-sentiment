@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tweet Sentiment</title>
 
     
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
- 
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+
+
+
+
+
+
+  
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="../css/layouts/side-menu-old-ie.css">
     <![endif]-->
@@ -17,11 +24,7 @@
     <!--<![endif]-->
   
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="../js/searchbyterm_js.js"></script>
-<script>
-	$(document).ready(searchByTermOnReadyFunction);
-</script>
+
     
 
     
@@ -60,36 +63,18 @@
         </div>
 
         <div class="content">
-            <h2 class="content-subhead" style="text-align:center">Search By Term</h2>
+            <h2 class="content-subhead">What is Tweet Sentiment?</h2>
             <p>
-                
+                Tweet Sentiment is a web application that performs Sentiment Analysis on Twitter data making use of the IBM's AlchemyAPI. Currently there is only one search mode: by term. The user (you!) provides the search term. The application will search for popular twitter posts (using the Twitter API) containing the given term and will then perform the sentiment analysis on the results. Use the sidebar or click the button bellow to go to the 'search by term' page!
             </p>
 
 	    <br/>
 
-	    <div class="pure-form pure-g">
-			<div class="pure-u-7-8">
-				<input class="pure-input-1" type="text" id="searchField" placeholder="ex: Obama">
-			</div>
-			<div class="pure-u-1-8">
-				<button class="pure-button pure-button-primary" id="doSearchBtn" >Analyze!</button>
-	    	</div>
+	    <div class="pure-g">
+	    	<div class="pure-u-1-3"></div> 
+	    	<div class="pure-u-1-3"><a href="/html/searchbyterm.html" class="pure-button" style="background: rgb(66, 184, 221)">Go to Search By Term!</a></div>
+	    	<div class="pure-u-1-3"></div>
 	    </div>
-
-		<br/>
-			
-		<div id="wait" style="text-align:center; display:none">
-			<img src="/image/ajax-loader.gif" />
-		</div>
-
-		<div id="resultSummaryDiv">
-
-		</div>
-
-		<div id="resultDiv">
-
-		</div>
-
 
         </div>
     </div>
