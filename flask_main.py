@@ -43,6 +43,10 @@ def send_js(path):
 def send_css(path):
 	return send_from_directory('css', path)
 
+#serve images
+@app.route('/image/<path:path>')
+def send_image(path):
+	return send_from_directory('image', path)
 
 
 if __name__ == '__main__':

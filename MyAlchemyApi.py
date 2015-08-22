@@ -25,7 +25,8 @@ class MyAlchemyApi():
 				ret['score'] = response['docSentiment']['score']
 			ret['error'] = None
 		else:
-			ret['error'] = response['statusInfo']
+			if 'statusInfo' in response: ret['error'] = response['statusInfo']
+			else: ret['error'] = 'error status=' + response['status']
 
 		return ret
 
